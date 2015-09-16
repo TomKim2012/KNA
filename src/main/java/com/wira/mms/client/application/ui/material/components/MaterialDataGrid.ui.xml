@@ -27,40 +27,21 @@
 	</ui:style>
 
 	<m:MaterialRow>
-		<m:MaterialRow>
-			<m:MaterialRadioButton ui:field="rbDefault"
-				value="true" name="type" text="Default" />
-			<m:MaterialRadioButton ui:field="rbBordered"
-				name="type" text="Bordered" />
-			<m:MaterialRadioButton ui:field="rbStriped"
-				name="type" text="Striped" />
-			<m:MaterialRadioButton ui:field="rbHoverable"
-				name="type" text="Hoverable" />
-		</m:MaterialRow>
-
-		<m:MaterialRow>
-			<m:MaterialButton ui:field="btnSource" text="Source"
-				color="blue" waves="light" />
-		</m:MaterialRow>
-
 		<m:MaterialRow addStyleNames="card">
 			<m:MaterialRow>
-				<m:MaterialLabel text="Android Users" fontSize="1.5"
-					addStyleNames="{style.headerItems} left" />
+				<m:MaterialLabel text="Kisumu Branch News Desk"
+					fontSize="1.5" addStyleNames="{style.headerItems} left" />
+					
 				<m:MaterialIcon tooltip="Action 1" color="black"
 					icon="mdi-action-explore" size="small" addStyleNames="{style.headerItems} right" />
-				<m:MaterialIcon tooltip="Action 2" color="black"
-					icon="mdi-navigation-apps" size="small" addStyleNames="{style.headerItems} right" />
-				<m:MaterialIcon tooltip="Action 3" color="black"
-					icon="mdi-social-whatshot" size="small" addStyleNames="{style.headerItems} right" />
 				<m:MaterialTextBox placeholder="Search" icon="mdi-action-search"
 					addStyleNames="right" />
 			</m:MaterialRow>
-			
+
 			<g:SimplePanel ui:field="gridPanel" />
-			
+
 			<g:SimplePanel ui:field="pagerPanel" addStyleNames="{style.panelPager}" />
 		</m:MaterialRow>
-	
+
 	</m:MaterialRow>
 </ui:UiBinder>

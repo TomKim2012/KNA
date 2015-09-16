@@ -35,18 +35,7 @@
 	</ui:style>
 	<g:HTMLPanel>
 		<m:MaterialNavBar wave="light" align="right" color="blue"
-			text="Task Management" sideBar="fixed" sideBarWidth="300">
-			<m:nav>
-				<m:MaterialSearch />
-			</m:nav>
-			<m:nav>
-				<m:MaterialLink icon="mdi-social-whatshot" textColor="white"
-					tooltip="Starter" />
-			</m:nav>
-			<m:nav>
-				<m:MaterialLink icon="mdi-navigation-apps" textColor="white"
-					tooltip="Apps" />
-			</m:nav>
+			text="My Tasks" sideBar="fixed" sideBarWidth="300">
 			<m:nav>
 				<m:MaterialLink icon="mdi-social-notifications"
 					textColor="white" tooltip="Notification" />
@@ -67,7 +56,7 @@
 			</m:sidebaritem>
 			<m:sidebaritem>
 				<m:MaterialLink icon="mdi-social-whatshot"
-					iconPosition="left" text="My Dashboard" textColor="blue" />
+					iconPosition="left" text="My NewsFeed" textColor="blue" />
 			</m:sidebaritem>
 			<m:sidebaritem>
 				<m:MaterialLink icon="mdi-navigation-apps"
@@ -110,7 +99,6 @@
 							<m:MaterialPanel>
 								<m:MaterialLabel
 									text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." />
-
 							</m:MaterialPanel>
 						</m:content>
 					</m:MaterialCollapsibleItem>
@@ -128,19 +116,19 @@
 			</m:initial>
 			<m:item>
 				<m:MaterialButton type="floating" waves="light"
-					color="yellow" icon="mdi-communication-email" tooltip="Story"
-					tooltipLocation="left" />
+					color="purple" icon="mdi-communication-email" ui:field="aStory"
+					tooltip="Create Story" tooltipLocation="left" />
 			</m:item>
 			<m:item>
 				<m:MaterialButton type="floating" waves="light"
-					color="blue" icon="mdi-image-palette" tooltip="Task"
+					color="blue" icon="mdi-image-palette" tooltip="CreateTask" ui:field="aTask"
 					tooltipLocation="left" />
 			</m:item>
 		</m:MaterialFloatingContainer>
 
-		<m:MaterialFooter color="blue" copyright="© 2015 KNA"
-			type="fixed">
+		<!-- <m:MaterialFooter color="blue" copyright="© 2015 KNA" -->
+		<!-- type="fixed"> -->
+		<!-- </m:MaterialFooter> -->
 
-		</m:MaterialFooter>
 	</g:HTMLPanel>
 </ui:UiBinder> 

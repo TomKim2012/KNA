@@ -102,23 +102,6 @@ public class MaterialDataGrid extends Composite {
 		};
 		checkColumn.setFieldUpdater(checkColumnFU);
 
-		// IMAGE
-		// Column<OrderDTO, MaterialImage> imageProfile = new Column<OrderDTO,
-		// MaterialImage>(new MaterialImageCell()) {
-		// @Override
-		// public MaterialImage getValue(OrderDTO object) {
-		//
-		// MaterialImage img = new MaterialImage();
-		// img.setUrl(object.getUserPicture());
-		// img.setWidth("40px");
-		// img.setHeight("40px");
-		// //SET IMAGE TO CIRCLE
-		// img.setType("circle");
-		// return img;
-		// }
-		//
-		// };
-
 		// USER
 		TextColumn<OrderDTO> colUser = new TextColumn<OrderDTO>() {
 			@Override
@@ -206,7 +189,6 @@ public class MaterialDataGrid extends Composite {
 
 		dataGrid.addColumn(checkColumn, SafeHtmlUtils.fromSafeConstant("<br/>"));
 		dataGrid.setColumnWidth(checkColumn, "50px");
-		//dataGrid.addColumn(imageProfile, "Picture");
 		dataGrid.addColumn(colUser, "");
 		dataGrid.addColumn(colName, "Item Name");
 
@@ -248,30 +230,7 @@ public class MaterialDataGrid extends Composite {
 	public void setOrderDTO(OrderDTO OrderDTO) {
 		this.OrderDTO = OrderDTO;
 	}
+	
 
-	@UiHandler("rbDefault")
-	void onDefault(ClickEvent e) {
-		dataGrid.setStyleName("responsive-table");
-	}
-
-	@UiHandler("rbBordered")
-	void onBordered(ClickEvent e) {
-		dataGrid.setStyleName("bordered responsive-table");
-	}
-
-	@UiHandler("rbStriped")
-	void onStriped(ClickEvent e) {
-		dataGrid.setStyleName("striped responsive-table");
-	}
-
-	@UiHandler("rbHoverable")
-	void onHoverable(ClickEvent e) {
-		dataGrid.setStyleName("hoverable responsive-table");
-	}
-
-	@UiHandler("btnSource")
-	void onSource(ClickEvent e) {
-		// Window.open(IMaterialConstants.LINK_DATAGRID, "" , "_blank");
-	}
 
 }

@@ -1,0 +1,70 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:m="urn:import:gwt.material.design.client.ui">
+
+
+	<m:MaterialRow>
+		<m:MaterialModalContent>
+			<h5>Task Creation</h5>
+
+			<m:MaterialRow styleName="hide">
+				<m:MaterialCollection>
+					<m:avatar>
+						<m:MaterialPanel>
+							<m:MaterialIcon icon="mdi-file-folder" type="avatar"
+								color="grey" shape="circle" />
+							<m:MaterialLabel text="Title" fontSize="1.5" />
+							<m:MaterialLabel text="First Line" />
+							<m:MaterialLabel text="Second Line" />
+						</m:MaterialPanel>
+					</m:avatar>
+					<m:avatar>
+						<m:MaterialPanel>
+							<m:MaterialIcon icon="mdi-action-assessment" type="avatar"
+								color="green" shape="circle" />
+							<m:MaterialLabel text="Title" fontSize="1.5" />
+							<m:MaterialLabel text="First Line" />
+							<m:MaterialLabel text="Second Line" />
+						</m:MaterialPanel>
+					</m:avatar>
+					<m:avatar>
+						<m:MaterialPanel>
+							<m:MaterialIcon icon="mdi-av-play-arrow" type="avatar"
+								color="red" shape="circle" />
+							<m:MaterialLabel text="Title" fontSize="1.5" />
+							<m:MaterialLabel text="First Line" />
+							<m:MaterialLabel text="Second Line" />
+						</m:MaterialPanel>
+					</m:avatar>
+				</m:MaterialCollection>
+
+			</m:MaterialRow>
+
+
+			<m:MaterialRow>
+				<m:MaterialColumn grid="s8">
+					<m:MaterialTextBox ui:field="autocomplete"
+						placeholder="Type User's Name" />
+				</m:MaterialColumn>
+
+				<m:MaterialColumn grid="s4">
+					<m:MaterialListBox>
+						<item>Select Task</item>
+						<item>Capture Video</item>
+						<item>Capture Photography</item>
+						<item>Article Creation</item>
+					</m:MaterialListBox>
+				</m:MaterialColumn>
+
+			</m:MaterialRow>
+		</m:MaterialModalContent>
+
+		<g:HTMLPanel styleName="modal-footer">
+			<div class="right">
+				<g:Anchor text="Save"
+					styleName="modal-action modal-close waves-effect waves-green btn-flat"></g:Anchor>
+			</div>
+		</g:HTMLPanel>
+
+	</m:MaterialRow>
+</ui:UiBinder> 
