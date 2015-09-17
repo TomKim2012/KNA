@@ -74,43 +74,10 @@
 			<m:MaterialLink text="Today" textColor="grey"
 				addStyleNames="{style.label}" />
 			<s:StoriesView></s:StoriesView>
-			<!-- m:MaterialRow>
-				<s:StoriesView></s:StoriesView>
-			</m:MaterialRow-->
 
-			<m:MaterialLink text="Today" textColor="grey"
+			<m:MaterialLink text="Yesterday" textColor="grey"
 				addStyleNames="{style.label}" />
-
-			<m:MaterialCollapsible type="popout">
-				<m:item>
-					<m:MaterialCollapsibleItem>
-						<m:header>
-							<m:MaterialLink text="Travel" icon="mdi-maps-flight"
-								textColor="purple" />
-						</m:header>
-						<m:content>
-							<m:MaterialLabel
-								text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." />
-						</m:content>
-					</m:MaterialCollapsibleItem>
-				</m:item>
-
-				<m:item>
-					<m:MaterialCollapsibleItem>
-						<m:header>
-							<m:MaterialLink text="Social"
-								icon="mdi-social-people" textColor="red" />
-						</m:header>
-						<m:content>
-							<m:MaterialPanel>
-								<m:MaterialLabel
-									text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." />
-							</m:MaterialPanel>
-						</m:content>
-					</m:MaterialCollapsibleItem>
-				</m:item>
-			</m:MaterialCollapsible>
-
+			<!-- s:StoriesView></s:StoriesView-->
 
 		</m:MaterialContainer>
 

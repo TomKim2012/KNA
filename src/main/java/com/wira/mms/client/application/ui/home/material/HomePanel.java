@@ -27,13 +27,13 @@ public class HomePanel extends Composite {
 	@UiHandler("aStory")
 	void onCreateStory(ClickEvent e) {
 		StoryForm storyForm = new StoryForm();
-		MaterialModal.showModal(storyForm, TYPE.FIXED_FOOTER);
+		MaterialModal.showModal(storyForm, TYPE.FIXED_FOOTER,false);
 	}
 
 	@UiHandler("aTask")
 	void onCreateTask(ClickEvent e) {
 		TaskForm taskForm = new TaskForm();
-		MaterialModal.showModal(taskForm, TYPE.FIXED_FOOTER);
+		MaterialModal.showModal(taskForm, TYPE.FIXED_FOOTER,false);
 	}
 
 }

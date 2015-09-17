@@ -8,7 +8,9 @@
 	<m:MaterialCollapsibleItem ui:field="container">
 		<m:header>
 			<m:MaterialLink ui:field="panelHeading" text="Uhuru's Visit To Kisumu" icon="mdi-editor-attach-file"
-				textColor="black" />
+				textColor="black">
+				<m:badge><m:MaterialBadge text="1 hr ago" color="blue"/></m:badge>
+			</m:MaterialLink>
 		</m:header>
 		<m:content>
 			<g:HTMLPanel ui:field="panelContent"></g:HTMLPanel>

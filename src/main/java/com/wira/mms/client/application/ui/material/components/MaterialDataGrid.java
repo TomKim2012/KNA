@@ -2,7 +2,9 @@ package com.wira.mms.client.application.ui.material.components;
 
 import gwt.material.design.client.custom.MaterialButtonCell;
 import gwt.material.design.client.custom.MaterialCheckBoxCell;
+import gwt.material.design.client.custom.MaterialImageCell;
 import gwt.material.design.client.ui.MaterialButton;
+import gwt.material.design.client.ui.MaterialImage;
 import gwt.material.design.client.ui.MaterialToast;
 
 import java.util.ArrayList;
@@ -71,7 +73,7 @@ public class MaterialDataGrid extends Composite {
 		dataGrid = createDatagrid();
 		gridPanel.setWidget(dataGrid);
 	}
-	
+
 	@Override
 	protected void onLoad() {
 		super.onLoad();
@@ -85,8 +87,7 @@ public class MaterialDataGrid extends Composite {
 
 	private DataGrid<Task> createDatagrid() {
 
-		this.sortDataHandler = new ListHandler<Task>(
-				new ArrayList<Task>());
+		this.sortDataHandler = new ListHandler<Task>(new ArrayList<Task>());
 		// CHECKBOX
 		Column<Task, Boolean> checkColumn = new Column<Task, Boolean>(
 				new MaterialCheckBoxCell()) {
@@ -108,21 +109,21 @@ public class MaterialDataGrid extends Composite {
 		checkColumn.setFieldUpdater(checkColumnFU);
 
 		// IMAGE
-		// Column<Task, MaterialImage> imageProfile = new Column<Task,
-		// MaterialImage>(new MaterialImageCell()) {
-		// @Override
-		// public MaterialImage getValue(Task object) {
-		//
-		// MaterialImage img = new MaterialImage();
-		// img.setUrl(object.getUserPicture());
-		// img.setWidth("40px");
-		// img.setHeight("40px");
-		// //SET IMAGE TO CIRCLE
-		// img.setType("circle");
-		// return img;
-		// }
-		//
-		// };
+		Column<Task, MaterialImage> imageProfile = new Column<Task, MaterialImage>(
+				new MaterialImageCell()) {
+			@Override
+			public MaterialImage getValue(Task object) {
+
+				MaterialImage img = new MaterialImage();
+				img.setUrl(object.getUserPicUrl());
+				img.setWidth("40px");
+				img.setHeight("40px");
+				// SET IMAGE TO CIRCLE
+				img.setType("circle");
+				return img;
+			}
+
+		};
 
 		// USER
 		TextColumn<Task> colUser = new TextColumn<Task>() {
@@ -196,17 +197,16 @@ public class MaterialDataGrid extends Composite {
 					}
 				});
 
-		final DataGrid<Task> dataGrid = new DataGrid<Task>(100,
-				KEY_PROVIDER);
+		final DataGrid<Task> dataGrid = new DataGrid<Task>(100, KEY_PROVIDER);
 		dataGrid.setSize("100%", "75vh");
 
 		dataGrid.addColumn(checkColumn, SafeHtmlUtils.fromSafeConstant("<br/>"));
 		dataGrid.setColumnWidth(checkColumn, "50px");
-		//dataGrid.addColumn(imageProfile, "Picture");
+		dataGrid.addColumn(imageProfile, "Picture");
+		dataGrid.setColumnWidth(imageProfile, "50px");
 		dataGrid.addColumn(colUser, "Name");
 		dataGrid.addColumn(colName, "Task Name");
 		dataGrid.addColumn(dateAssigned, "Assignment Date");
-		
 
 		dataGrid.setStyleName("responsive-table");
 
@@ -226,18 +226,19 @@ public class MaterialDataGrid extends Composite {
 
 	private void getAllTask() {
 		orders.add(new Task(1, "Jackson Kalweo",
-				"http://b.vimeocdn.com/ps/339/488/3394886_300.jpg", "Photography",
-				new Date(),new Date()));
+				"http://b.vimeocdn.com/ps/339/488/3394886_300.jpg",
+				"Photography", new Date(), new Date()));
 		orders.add(new Task(1, "Marti Muthige",
-				"http://lorempixel.com/50/50/people?1", "Video", new Date(),new Date()));
-		orders.add(new Task(1, "Xenia",
-				"http://lorempixel.com/50/50/people?8", "Audio", new Date(),new Date()));
+				"http://lorempixel.com/50/50/people?1", "Video", new Date(),
+				new Date()));
+		orders.add(new Task(1, "Xenia", "http://lorempixel.com/50/50/people?8",
+				"Audio", new Date(), new Date()));
 		orders.add(new Task(1, "Alexander Ochieng",
-				"http://lorempixel.com/50/50/people?2", "Article", new Date(),new Date()));
+				"http://lorempixel.com/50/50/people?2", "Article", new Date(),
+				new Date()));
 		TaskProvider.setList(orders);
 		sortDataHandler.setList(TaskProvider.getList());
 	}
-	
 
 	public Task getTask() {
 		return Task;
@@ -246,7 +247,5 @@ public class MaterialDataGrid extends Composite {
 	public void setTask(Task Task) {
 		this.Task = Task;
 	}
-	
-
 
 }
