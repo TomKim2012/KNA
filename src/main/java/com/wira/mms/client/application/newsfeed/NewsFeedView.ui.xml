@@ -2,26 +2,24 @@
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
 	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:m="urn:import:gwt.material.design.client.ui">
 
-	<g:HTMLPanel></g:HTMLPanel>
-	<!-- <g:SimplePanel ui:field="main"> -->
-	<!-- <m:MaterialCollapsible type="accordion"> -->
-	<!-- <m:item> -->
-	<!-- <m:MaterialCollapsibleItem> -->
-	<!-- <m:header> -->
-	<!-- <m:MaterialLink text="Paragraph" icon="mdi-editor-attach-file" -->
-	<!-- textColor="black" /> -->
-	<!-- </m:header> -->
-	<!-- <m:content> -->
-	<!-- <m:MaterialTitle -->
-	<!-- description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+	<g:SimplePanel ui:field="main">
+		<m:MaterialCollapsible type="accordion">
+			<m:item>
+				<m:MaterialCollapsibleItem>
+					<m:header>
+						<m:MaterialLink text="Paragraph" icon="mdi-editor-attach-file"
+							textColor="black" />
+					</m:header>
+					<m:content>
+						<m:MaterialTitle
+							description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
 		sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim 
 		ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip 
-		ex ea commodo consequat." /> -->
-	<!-- </m:content> -->
-	<!-- </m:MaterialCollapsibleItem> -->
-	<!-- </m:item> -->
-	<!-- Other Collapsible Items to be declared here -->
-	<!-- </m:MaterialCollapsible> -->
-	<!-- </g:SimplePanel> -->
+		ex ea commodo consequat." />
+					</m:content>
+				</m:MaterialCollapsibleItem>
+			</m:item>
+		</m:MaterialCollapsible>
+	</g:SimplePanel>
 
 </ui:UiBinder>

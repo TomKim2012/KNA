@@ -19,8 +19,7 @@
 				<item>Low</item>
 			</m:MaterialListBox>
 
-			<m:MaterialDatePicker placeholder="Due Date/Time"
-				selectionType="YEAR" />
+			<m:MaterialTimePicker placeholder="Time Due" />
 		</m:MaterialModalContent>
 
 		<g:HTMLPanel styleName="modal-footer">

@@ -1,10 +1,7 @@
-package com.wira.mms.client.application.task;
-
-import gwt.material.design.client.ui.MaterialAutoComplete;
+package com.wira.mms.client.application.task.form;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
-import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Widget;
 
@@ -15,9 +12,6 @@ public class TaskForm extends Composite {
 
 	interface TaskFormUiBinder extends UiBinder<Widget, TaskForm> {
 	}
-
-	@UiField
-	MaterialAutoComplete autoCompleteUsers;
 
 	public TaskForm() {
 		initWidget(uiBinder.createAndBindUi(this));

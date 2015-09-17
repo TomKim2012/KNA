@@ -1,0 +1,45 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:m="urn:import:gwt.material.design.client.ui">
+
+	<ui:style>
+	.label {
+		margin-left: 5%;
+		margin-top: 5%
+	}
+	</ui:style>
+
+	<g:HTMLPanel>
+		<m:MaterialLink text="Today" textColor="grey"
+			addStyleNames="{style.label}" />
+		<m:MaterialCollection>
+			<m:avatar>
+				<m:MaterialPanel>
+					<m:MaterialImage addStyleNames="circle"
+						url="http://b.vimeocdn.com/ps/339/488/3394886_300.jpg" />
+					<m:MaterialLabel text="Duggan Kimani " fontSize="1.5" />
+					assigned you this task
+					<m:MaterialLink text="Uhuru's Visit to Kisumu - Photography" />
+				</m:MaterialPanel>
+			</m:avatar>
+			<m:avatar>
+				<m:MaterialPanel>
+					<m:MaterialImage addStyleNames="circle"
+						url="http://b.vimeocdn.com/ps/339/488/3394886_300.jpg" />
+					<m:MaterialLabel text="Pius Kamau " fontSize="1.5" />
+					assigned you this other task
+					<m:MaterialLink text="Uhuru's Visit to Kisumu - Photography" />
+				</m:MaterialPanel>
+			</m:avatar>
+			<m:avatar>
+				<m:MaterialPanel>
+					<m:MaterialImage addStyleNames="circle"
+						url="http://b.vimeocdn.com/ps/339/488/3394886_300.jpg" />
+					<m:MaterialLabel text="Pius Kamau " fontSize="1.5" />
+					assigned you this other task
+					<m:MaterialLink text="Uhuru's Visit to Kisumu - Photography"></m:MaterialLink>
+				</m:MaterialPanel>
+			</m:avatar>
+		</m:MaterialCollection>
+	</g:HTMLPanel>
+</ui:UiBinder> 

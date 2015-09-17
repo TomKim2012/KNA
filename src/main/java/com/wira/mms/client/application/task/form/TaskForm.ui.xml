@@ -1,0 +1,8 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:m="urn:import:gwt.material.design.client.ui">
+
+	<g:HTMLPanel>
+			<m:MaterialImage url="http://127.0.0.1:8888/FormCapture.PNG"></m:MaterialImage>
+	</g:HTMLPanel>
+</ui:UiBinder> 
