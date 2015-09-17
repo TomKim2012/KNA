@@ -1,6 +1,5 @@
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
-	xmlns:g='urn:import:com.google.gwt.user.client.ui' 
-	xmlns:material="urn:import:com.wira.mms.client.application.ui.home.material">
+	xmlns:g='urn:import:com.google.gwt.user.client.ui' xmlns:material="urn:import:com.wira.mms.client.application.ui.home.material">
 	<g:HTMLPanel>
 		<material:HomePanel></material:HomePanel>
 	</g:HTMLPanel>

@@ -2,6 +2,7 @@ package com.wira.mms.client.application.ui.home.material;
 
 import gwt.material.design.client.ui.MaterialModal;
 import gwt.material.design.client.ui.MaterialModal.TYPE;
+import gwt.material.design.client.ui.MaterialNavBar;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -19,7 +20,8 @@ public class HomePanel extends Composite {
 
 	interface HomePanelUiBinder extends UiBinder<Widget, HomePanel> {
 	}
-
+	
+	
 	public HomePanel() {
 		initWidget(uiBinder.createAndBindUi(this));
 	}

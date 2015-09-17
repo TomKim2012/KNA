@@ -1,7 +1,6 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
-	xmlns:g="urn:import:com.google.gwt.user.client.ui"
-	xmlns:m="urn:import:gwt.material.design.client.ui"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:m="urn:import:gwt.material.design.client.ui"
 	xmlns:c="urn:import:com.wira.mms.client.application.ui.material.components"
 	xmlns:s="urn:import:com.wira.mms.client.components.stories">
 	<ui:style>
@@ -37,7 +36,12 @@
 	</ui:style>
 	<g:HTMLPanel>
 		<m:MaterialNavBar wave="light" align="right" color="blue"
-			text="My Tasks" sideBar="fixed" sideBarWidth="300">
+			text="My Tasks" sideBar="" sideBarWidth="280">
+			<m:nav>
+				<m:MaterialLink icon="mdi-social-notifications"
+					textColor="white" tooltip="Notification" />
+			</m:nav>
+
 			<m:nav>
 				<m:MaterialLink icon="mdi-social-notifications"
 					textColor="white" tooltip="Notification" />
@@ -70,14 +74,16 @@
 
 
 		<m:MaterialContainer>
-			
+			<m:MaterialLabel text="Kisumu Branch News Desk"
+				fontSize="1.5" addStyleNames="{style.headerItems} left hide" />
+
 			<m:MaterialLink text="Today" textColor="grey"
 				addStyleNames="{style.label}" />
 			<s:StoriesView></s:StoriesView>
 
 			<m:MaterialLink text="Yesterday" textColor="grey"
 				addStyleNames="{style.label}" />
-			<!-- s:StoriesView></s:StoriesView-->
+			<!-- s:StoriesView></s:StoriesView -->
 
 		</m:MaterialContainer>
 
@@ -94,8 +100,8 @@
 			</m:item>
 			<m:item>
 				<m:MaterialButton type="floating" waves="light"
-					color="blue" icon="mdi-image-palette" tooltip="CreateTask" ui:field="aTask"
-					tooltipLocation="left" />
+					color="blue" icon="mdi-image-palette" tooltip="CreateTask"
+					ui:field="aTask" tooltipLocation="left" />
 			</m:item>
 		</m:MaterialFloatingContainer>
 

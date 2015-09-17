@@ -6,6 +6,7 @@
 	<m:MaterialRow>
 		<m:MaterialModalContent>
 			<h5>Task Creation</h5>
+			
 
 			<m:MaterialRow>
 				<m:MaterialColumn grid="s8">
@@ -14,13 +15,23 @@
 				</m:MaterialColumn>
 
 				<m:MaterialColumn grid="s4">
-					<m:MaterialListBox>
-						<item>Select Task</item>
-						<item><m:MaterialIcon icon="mdi-av-videocam" />Video</item>
-						<item><m:MaterialIcon icon="mdi-action-3d-rotation" />Photography</item>
-						<item><m:MaterialIcon icon="mdi-action-3d-rotation" />Article</item>
-					</m:MaterialListBox>
+					<m:MaterialDropDown text="Selection" color="blue"
+						waves="light" divider="true" activates="myDropDown2">
+						<m:item>
+							<m:MaterialLink text="Video" iconPosition="right"
+								icon="mdi-av-videocam" />
+						</m:item>
+						<m:item>
+							<m:MaterialLink text="Photograph" iconPosition="right"
+								icon="mdi-image-collections" />
+						</m:item>
+						<m:item>
+							<m:MaterialLink text="Article" iconPosition="right"
+								icon="mdi-action-assignment" />
+						</m:item>
+					</m:MaterialDropDown>
 				</m:MaterialColumn>
+				
 			</m:MaterialRow>
 
 			<m:MaterialRow>

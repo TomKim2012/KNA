@@ -202,7 +202,7 @@ public class MaterialDataGrid extends Composite {
 
 		dataGrid.addColumn(checkColumn, SafeHtmlUtils.fromSafeConstant("<br/>"));
 		dataGrid.setColumnWidth(checkColumn, "50px");
-		dataGrid.addColumn(imageProfile, "Picture");
+		dataGrid.addColumn(imageProfile, "");
 		dataGrid.setColumnWidth(imageProfile, "50px");
 		dataGrid.addColumn(colUser, "Name");
 		dataGrid.addColumn(colName, "Task Name");
