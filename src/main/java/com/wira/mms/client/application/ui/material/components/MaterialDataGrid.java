@@ -225,15 +225,15 @@ public class MaterialDataGrid extends Composite {
 	}
 
 	private void getAllTask() {
-		orders.add(new Task(1, "Marjorie",
-				"http://b.vimeocdn.com/ps/339/488/3394886_300.jpg", "Nexus",
+		orders.add(new Task(1, "Jackson Kalweo",
+				"http://b.vimeocdn.com/ps/339/488/3394886_300.jpg", "Photography",
 				new Date(),new Date()));
-		orders.add(new Task(1, "Karah",
-				"http://lorempixel.com/50/50/people?1", "Asus", new Date(),new Date()));
+		orders.add(new Task(1, "Marti Muthige",
+				"http://lorempixel.com/50/50/people?1", "Video", new Date(),new Date()));
 		orders.add(new Task(1, "Xenia",
-				"http://lorempixel.com/50/50/people?8", "Oppo", new Date(),new Date()));
-		orders.add(new Task(1, "Alejandria",
-				"http://lorempixel.com/50/50/people?2", "Samsung", new Date(),new Date()));
+				"http://lorempixel.com/50/50/people?8", "Audio", new Date(),new Date()));
+		orders.add(new Task(1, "Alexander Ochieng",
+				"http://lorempixel.com/50/50/people?2", "Article", new Date(),new Date()));
 		TaskProvider.setList(orders);
 		sortDataHandler.setList(TaskProvider.getList());
 	}
