@@ -1,0 +1,19 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" 
+	xmlns:m="urn:import:gwt.material.design.client.ui"
+	xmlns:c="urn:import:com.wira.mms.client.application.ui.material.components">
+
+
+	<m:MaterialCollapsibleItem ui:field="container">
+		<m:header>
+			<m:MaterialLink ui:field="panelHeading" text="Uhuru's Visit To Kisumu" icon="mdi-editor-attach-file"
+				textColor="black" />
+		</m:header>
+		<m:content>
+			<g:HTMLPanel ui:field="panelContent"></g:HTMLPanel>
+			<!-- c:MaterialDataGrid></c:MaterialDataGrid -->
+		</m:content>
+	</m:MaterialCollapsibleItem>
+
+</ui:UiBinder> 

@@ -3,11 +3,11 @@ package com.wira.mms.client.application.ui.material.components;
 import gwt.material.design.client.custom.MaterialButtonCell;
 import gwt.material.design.client.custom.MaterialCheckBoxCell;
 import gwt.material.design.client.ui.MaterialButton;
-import gwt.material.design.client.ui.MaterialImage;
 import gwt.material.design.client.ui.MaterialToast;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Date;
 import java.util.List;
 
 import com.google.gwt.cell.client.FieldUpdater;
@@ -23,7 +23,6 @@ import com.google.gwt.user.cellview.client.DataGrid;
 import com.google.gwt.user.cellview.client.SimplePager;
 import com.google.gwt.user.cellview.client.SimplePager.TextLocation;
 import com.google.gwt.user.cellview.client.TextColumn;
-import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.SimplePanel;
 import com.google.gwt.user.client.ui.Widget;
@@ -31,6 +30,7 @@ import com.google.gwt.view.client.ListDataProvider;
 import com.google.gwt.view.client.MultiSelectionModel;
 import com.google.gwt.view.client.ProvidesKey;
 import com.google.gwt.view.client.SelectionModel;
+import com.wira.mms.client.utils.DateUtils;
 
 public class MaterialDataGrid extends Composite {
 
@@ -41,23 +41,23 @@ public class MaterialDataGrid extends Composite {
 			UiBinder<Widget, MaterialDataGrid> {
 	}
 
-	private List<OrderDTO> orders = new ArrayList<OrderDTO>();
+	private List<Task> orders = new ArrayList<Task>();
 
-	private DataGrid<OrderDTO> dataGrid;
-	private ListDataProvider<OrderDTO> orderDTOProvider;
-	private ListHandler<OrderDTO> sortDataHandler;
-	private final ProvidesKey<OrderDTO> KEY_PROVIDER = new ProvidesKey<OrderDTO>() {
+	private DataGrid<Task> dataGrid;
+	private ListDataProvider<Task> TaskProvider;
+	private ListHandler<Task> sortDataHandler;
+	private final ProvidesKey<Task> KEY_PROVIDER = new ProvidesKey<Task>() {
 
 		@Override
-		public Object getKey(OrderDTO item) {
+		public Object getKey(Task item) {
 			return item.getId();
 		}
 	};
 
-	private final SelectionModel<OrderDTO> selectionModel = new MultiSelectionModel<OrderDTO>(
+	private final SelectionModel<Task> selectionModel = new MultiSelectionModel<Task>(
 			KEY_PROVIDER);
 
-	private OrderDTO OrderDTO;
+	private Task Task;
 
 	@UiField
 	SimplePanel gridPanel, pagerPanel;
@@ -70,43 +70,48 @@ public class MaterialDataGrid extends Composite {
 	private void setGrid() {
 		dataGrid = createDatagrid();
 		gridPanel.setWidget(dataGrid);
+	}
+	
+	@Override
+	protected void onLoad() {
+		super.onLoad();
 		refreshData();
 	}
 
 	private void refreshData() {
-		orderDTOProvider.setList(new ArrayList<OrderDTO>());
-		getAllOrderDTO();
+		TaskProvider.setList(new ArrayList<Task>());
+		getAllTask();
 	}
 
-	private DataGrid<OrderDTO> createDatagrid() {
+	private DataGrid<Task> createDatagrid() {
 
-		this.sortDataHandler = new ListHandler<OrderDTO>(
-				new ArrayList<OrderDTO>());
+		this.sortDataHandler = new ListHandler<Task>(
+				new ArrayList<Task>());
 		// CHECKBOX
-		Column<OrderDTO, Boolean> checkColumn = new Column<OrderDTO, Boolean>(
+		Column<Task, Boolean> checkColumn = new Column<Task, Boolean>(
 				new MaterialCheckBoxCell()) {
 			@Override
-			public Boolean getValue(OrderDTO object) {
+			public Boolean getValue(Task object) {
 				boolean value = selectionModel.isSelected(object);
 
 				return value;
 			}
 		};
 
-		FieldUpdater<OrderDTO, Boolean> checkColumnFU = new FieldUpdater<OrderDTO, Boolean>() {
+		FieldUpdater<Task, Boolean> checkColumnFU = new FieldUpdater<Task, Boolean>() {
 
 			@Override
-			public void update(int index, OrderDTO object, Boolean value) {
+			public void update(int index, Task object, Boolean value) {
 				selectionModel.setSelected(object, value);
 			}
 		};
 		checkColumn.setFieldUpdater(checkColumnFU);
 
 		// IMAGE
-		// Column<OrderDTO, MaterialImage> imageProfile = new Column<OrderDTO,
+		// Column<Task, MaterialImage> imageProfile = new Column<Task,
 		// MaterialImage>(new MaterialImageCell()) {
 		// @Override
-		// public MaterialImage getValue(OrderDTO object) {
+		// public MaterialImage getValue(Task object) {
 		//
 		// MaterialImage img = new MaterialImage();
 		// img.setUrl(object.getUserPicture());
@@ -120,64 +125,55 @@ public class MaterialDataGrid extends Composite {
 		// };
 
 		// USER
-		TextColumn<OrderDTO> colUser = new TextColumn<OrderDTO>() {
+		TextColumn<Task> colUser = new TextColumn<Task>() {
 			@Override
-			public String getValue(OrderDTO object) {
+			public String getValue(Task object) {
 
 				return object.getUser();
 			}
 		};
 		colUser.setSortable(true);
-		sortDataHandler.setComparator(colUser, new Comparator<OrderDTO>() {
+		sortDataHandler.setComparator(colUser, new Comparator<Task>() {
 
 			@Override
-			public int compare(OrderDTO o1, OrderDTO o2) {
+			public int compare(Task o1, Task o2) {
 
 				return o1.getUser().compareTo(o2.getUser());
 			}
 		});
 
 		// ITEM NAME
-		TextColumn<OrderDTO> colName = new TextColumn<OrderDTO>() {
+		TextColumn<Task> colName = new TextColumn<Task>() {
 			@Override
-			public String getValue(OrderDTO object) {
+			public String getValue(Task object) {
 
-				return object.getName();
+				return object.getTaskName();
 			}
 		};
 		colName.setSortable(true);
-		sortDataHandler.setComparator(colName, new Comparator<OrderDTO>() {
+		sortDataHandler.setComparator(colName, new Comparator<Task>() {
 
 			@Override
-			public int compare(OrderDTO o1, OrderDTO o2) {
+			public int compare(Task o1, Task o2) {
 
-				return o1.getName().compareTo(o2.getName());
+				return o1.getTaskName().compareTo(o2.getTaskName());
 			}
 		});
 
 		// PRICE
-		TextColumn<OrderDTO> colPrice = new TextColumn<OrderDTO>() {
+		TextColumn<Task> dateAssigned = new TextColumn<Task>() {
 			@Override
-			public String getValue(OrderDTO object) {
+			public String getValue(Task object) {
 
-				return object.getPrice();
+				return "1 hr ago";
 			}
 		};
-		colPrice.setSortable(true);
-		sortDataHandler.setComparator(colPrice, new Comparator<OrderDTO>() {
-
-			@Override
-			public int compare(OrderDTO o1, OrderDTO o2) {
-
-				return o1.getPrice().compareTo(o2.getPrice());
-			}
-		});
 
 		// ACTION BUTTON
-		Column<OrderDTO, MaterialButton> showLogBtnColumn = new Column<OrderDTO, MaterialButton>(
+		Column<Task, MaterialButton> showLogBtnColumn = new Column<Task, MaterialButton>(
 				new MaterialButtonCell()) {
 			@Override
-			public MaterialButton getValue(OrderDTO object) {
+			public MaterialButton getValue(Task object) {
 
 				MaterialButton mb = new MaterialButton("Show log", "blue",
 						"light");
@@ -191,25 +187,26 @@ public class MaterialDataGrid extends Composite {
 		};
 
 		showLogBtnColumn
-				.setFieldUpdater(new FieldUpdater<OrderDTO, MaterialButton>() {
+				.setFieldUpdater(new FieldUpdater<Task, MaterialButton>() {
 
 					@Override
-					public void update(int index, OrderDTO object,
+					public void update(int index, Task object,
 							MaterialButton value) {
-						MaterialToast.alert(object.getName());
+						MaterialToast.alert(object.getTaskName());
 					}
 				});
 
-		final DataGrid<OrderDTO> dataGrid = new DataGrid<OrderDTO>(100,
+		final DataGrid<Task> dataGrid = new DataGrid<Task>(100,
 				KEY_PROVIDER);
 		dataGrid.setSize("100%", "75vh");
 
 		dataGrid.addColumn(checkColumn, SafeHtmlUtils.fromSafeConstant("<br/>"));
 		dataGrid.setColumnWidth(checkColumn, "50px");
 		//dataGrid.addColumn(imageProfile, "Picture");
-		dataGrid.addColumn(colUser, "");
-		dataGrid.addColumn(colName, "Item Name");
-
+		dataGrid.addColumn(colUser, "Name");
+		dataGrid.addColumn(colName, "Task Name");
+		dataGrid.addColumn(dateAssigned, "Assignment Date");
+		
 		dataGrid.setStyleName("responsive-table");
 
 		SimplePager.Resources pagerResources = GWT
@@ -218,35 +215,35 @@ public class MaterialDataGrid extends Composite {
 				pagerResources, false, 0, true);
 		pager.setDisplay(dataGrid);
 
-		orderDTOProvider = new ListDataProvider<OrderDTO>();
-		orderDTOProvider.addDataDisplay(dataGrid);
+		TaskProvider = new ListDataProvider<Task>();
+		TaskProvider.addDataDisplay(dataGrid);
 		dataGrid.addColumnSortHandler(sortDataHandler);
 
 		return dataGrid;
 
 	}
 
-	private void getAllOrderDTO() {
-		orders.add(new OrderDTO(1, "Marjorie",
+	private void getAllTask() {
+		orders.add(new Task(1, "Marjorie",
 				"http://b.vimeocdn.com/ps/339/488/3394886_300.jpg", "Nexus",
-				"Php 30000"));
-		orders.add(new OrderDTO(1, "Karah",
-				"http://lorempixel.com/50/50/people?1", "Asus", "Php 23000"));
-		orders.add(new OrderDTO(1, "Xenia",
-				"http://lorempixel.com/50/50/people?8", "Oppo", "Php 30000"));
-		orders.add(new OrderDTO(1, "Alejandria",
-				"http://lorempixel.com/50/50/people?2", "Samsung", "Php 40000"));
-		orderDTOProvider.setList(orders);
-		sortDataHandler.setList(orderDTOProvider.getList());
+				new Date(),new Date()));
+		orders.add(new Task(1, "Karah",
+				"http://lorempixel.com/50/50/people?1", "Asus", new Date(),new Date()));
+		orders.add(new Task(1, "Xenia",
+				"http://lorempixel.com/50/50/people?8", "Oppo", new Date(),new Date()));
+		orders.add(new Task(1, "Alejandria",
+				"http://lorempixel.com/50/50/people?2", "Samsung", new Date(),new Date()));
+		TaskProvider.setList(orders);
+		sortDataHandler.setList(TaskProvider.getList());
 	}
 	
 
-	public OrderDTO getOrderDTO() {
-		return OrderDTO;
+	public Task getTask() {
+		return Task;
 	}
 
-	public void setOrderDTO(OrderDTO OrderDTO) {
-		this.OrderDTO = OrderDTO;
+	public void setTask(Task Task) {
+		this.Task = Task;
 	}
 
 	@UiHandler("rbDefault")

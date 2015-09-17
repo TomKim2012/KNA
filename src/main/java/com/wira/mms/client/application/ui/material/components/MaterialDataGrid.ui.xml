@@ -45,7 +45,7 @@
 
 		<m:MaterialRow addStyleNames="card">
 			<m:MaterialRow>
-				<m:MaterialLabel text="Android Users" fontSize="1.5"
+				<m:MaterialLabel text="Task Assignees" fontSize="1.5"
 					addStyleNames="{style.headerItems} left" />
 				<m:MaterialIcon tooltip="Action 1" color="black"
 					icon="mdi-action-explore" size="small" addStyleNames="{style.headerItems} right" />
