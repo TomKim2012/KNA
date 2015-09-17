@@ -207,6 +207,7 @@ public class MaterialDataGrid extends Composite {
 		dataGrid.addColumn(colName, "Task Name");
 		dataGrid.addColumn(dateAssigned, "Assignment Date");
 		
+
 		dataGrid.setStyleName("responsive-table");
 
 		SimplePager.Resources pagerResources = GWT
@@ -245,30 +246,7 @@ public class MaterialDataGrid extends Composite {
 	public void setTask(Task Task) {
 		this.Task = Task;
 	}
+	
 
-	@UiHandler("rbDefault")
-	void onDefault(ClickEvent e) {
-		dataGrid.setStyleName("responsive-table");
-	}
-
-	@UiHandler("rbBordered")
-	void onBordered(ClickEvent e) {
-		dataGrid.setStyleName("bordered responsive-table");
-	}
-
-	@UiHandler("rbStriped")
-	void onStriped(ClickEvent e) {
-		dataGrid.setStyleName("striped responsive-table");
-	}
-
-	@UiHandler("rbHoverable")
-	void onHoverable(ClickEvent e) {
-		dataGrid.setStyleName("hoverable responsive-table");
-	}
-
-	@UiHandler("btnSource")
-	void onSource(ClickEvent e) {
-		// Window.open(IMaterialConstants.LINK_DATAGRID, "" , "_blank");
-	}
 
 }

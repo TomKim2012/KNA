@@ -1,0 +1,35 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:m="urn:import:gwt.material.design.client.ui">
+	<ui:style>
+	
+	</ui:style>
+
+	<m:MaterialRow>
+
+		<m:MaterialModalContent>
+			<h5>New Story</h5>
+
+			<m:MaterialTextBox placeholder="Story Name" />
+			<m:MaterialTextArea placeholder="Description" />
+			<m:MaterialListBox>
+				<item>Set Priority</item>
+				<item>High</item>
+				<item>Medium</item>
+				<item>Low</item>
+			</m:MaterialListBox>
+
+			<m:MaterialDatePicker placeholder="Due Date/Time"
+				selectionType="YEAR" />
+		</m:MaterialModalContent>
+
+		<g:HTMLPanel styleName="modal-footer">
+			<div class="right">
+				<g:Anchor text="Save"
+					styleName="modal-action modal-close waves-effect waves-green btn-flat"></g:Anchor>
+			</div>
+		</g:HTMLPanel>
+
+	</m:MaterialRow>
+
+</ui:UiBinder> 
