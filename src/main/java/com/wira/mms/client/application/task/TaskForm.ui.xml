@@ -7,54 +7,23 @@
 		<m:MaterialModalContent>
 			<h5>Task Creation</h5>
 
-			<m:MaterialRow styleName="hide">
-				<m:MaterialCollection>
-					<m:avatar>
-						<m:MaterialPanel>
-							<m:MaterialIcon icon="mdi-file-folder" type="avatar"
-								color="grey" shape="circle" />
-							<m:MaterialLabel text="Title" fontSize="1.5" />
-							<m:MaterialLabel text="First Line" />
-							<m:MaterialLabel text="Second Line" />
-						</m:MaterialPanel>
-					</m:avatar>
-					<m:avatar>
-						<m:MaterialPanel>
-							<m:MaterialIcon icon="mdi-action-assessment" type="avatar"
-								color="green" shape="circle" />
-							<m:MaterialLabel text="Title" fontSize="1.5" />
-							<m:MaterialLabel text="First Line" />
-							<m:MaterialLabel text="Second Line" />
-						</m:MaterialPanel>
-					</m:avatar>
-					<m:avatar>
-						<m:MaterialPanel>
-							<m:MaterialIcon icon="mdi-av-play-arrow" type="avatar"
-								color="red" shape="circle" />
-							<m:MaterialLabel text="Title" fontSize="1.5" />
-							<m:MaterialLabel text="First Line" />
-							<m:MaterialLabel text="Second Line" />
-						</m:MaterialPanel>
-					</m:avatar>
-				</m:MaterialCollection>
-
-			</m:MaterialRow>
-
-
 			<m:MaterialRow>
 				<m:MaterialColumn grid="s8">
-					<m:MaterialTextBox ui:field="autocomplete"
-						placeholder="Type User's Name" />
+					<m:MaterialAutoComplete ui:field="autoCompleteUsers"
+						placeholder="Type Users Name" />
 				</m:MaterialColumn>
 
 				<m:MaterialColumn grid="s4">
 					<m:MaterialListBox>
 						<item>Select Task</item>
-						<item>Capture Video</item>
-						<item>Capture Photography</item>
-						<item>Article Creation</item>
+						<item><m:MaterialIcon icon="mdi-av-videocam" />Video</item>
+						<item><m:MaterialIcon icon="mdi-action-3d-rotation" />Photography</item>
+						<item><m:MaterialIcon icon="mdi-action-3d-rotation" />Article</item>
 					</m:MaterialListBox>
 				</m:MaterialColumn>
+			</m:MaterialRow>
+
+			<m:MaterialRow>
 
 			</m:MaterialRow>
 		</m:MaterialModalContent>

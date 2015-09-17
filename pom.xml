@@ -176,8 +176,7 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!--mvn install:install-file -Dfile=gwt-material-1.3.4-SNAPSHOT.jar -DgroupId=com.github.gwtmaterialdesign 
-			-DartifactId=gwt-material -Dversion=1.3.4 -Dpackaging=jar -->
+		<!--mvn install:install-file -Dfile=gwt-material-1.3.4-SNAPSHOT.jar -DgroupId=com.github.gwtmaterialdesign -DartifactId=gwt-material -Dversion=1.3.4-SNAPSHOT -Dpackaging=jar -->
 		
 		<dependency>
 			<groupId>com.github.gwtmaterialdesign</groupId>
